@@ -39,7 +39,7 @@ class SignupForm(FlaskForm) :
 	password = PasswordField('password',validators = [InputRequired(), Length(min = 6,max = 30,message='Password must be between 6 and 30 characters'), EqualTo('confirm_password', message='Passwords must match')])
 	confirm_password = PasswordField('confirm_password',validators = [InputRequired(), Length(min = 6,max = 30,message='Password must be between 6 and 30 characters')])
 	email = StringField('email',validators = [Email(message='Not a valid Email Address'),Length(max = 50,message='Email must atmost 50 characters')])
-	name = StringField('name',validators = [Length(min = 1,max = 50,message='Name must be atmost 50 characters')])
+	name = StringField('name',validators = [Length(min = 1,max = 50,message='Name must be between 1 and 50 characters')])
 	shaastraID = StringField('shaastraID',validators = [InputRequired(), Length(max = 25,message='Shaastra ID must be atmost 25 characters')])
 	contact = StringField('contact',validators = [Length(max = 20,message='Contact Number must be atmost 20 characters')])
 
