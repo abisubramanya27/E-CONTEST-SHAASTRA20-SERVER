@@ -1,0 +1,72 @@
+{% extends "./layout.html" %}
+
+{% block css_link %}
+<link rel = "stylesheet" href = "{{ url_for('static', filename='css/styles1.css')}}">
+{% endblock %}
+
+{% block js_link %}
+<script src = "{{ url_for('static', filename='js/script2.js')}}"></script>
+{% endblock %}
+
+{% block title %}
+Contest Standings
+{% endblock %}
+
+{% block top_part %}
+<h1>CONTEST STANDINGS</h1>
+{% endblock %}
+
+{% block page_content %}
+<div class = "content">
+	<div class = "table-container">
+		<table>
+			<tr class = "header">
+				<th>RANK</th>
+				<th>SHAASTRA ID</th>
+				<th>Q1</th>
+				<th>Q2</th>
+				<th>Q3</th>
+				<th>Q4</th>
+				<th>Q5</th>
+				<th>TOTAL SCORE</th>
+			</tr>
+			{% for res in results : %}
+			<tr>
+				<td></td>
+				<td>{{res.user.shaastraID}}</td>
+				{% if res.q1s is not none : %}
+				<td>{{res.q1s}}</td>
+				{% else : %}
+				<td>-</td>
+				{% endif %}
+				{% if res.q2s is not none : %}
+				<td>{{res.q2s}}</td>
+				{% else : %}
+				<td>-</td>
+				{% endif %}
+				{% if res.q3s is not none : %}
+				<td>{{res.q3s}}</td>
+				{% else : %}
+				<td>-</td>
+				{% endif %}
+				{% if res.q4s is not none : %}
+				<td>{{res.q4s}}</td>
+				{% else : %}
+				<td>-</td>
+				{% endif %}
+				{% if res.q5s is not none : %}
+				<td>{{res.q5s}}</td>
+				{% else : %}
+				<td>-</td>
+				{% endif %}
+				{% if res.tot_score is not none : %}
+				<td>{{res.tot_score}}</td>
+				{% else : %}
+				<td>-</td>
+				{% endif %}
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

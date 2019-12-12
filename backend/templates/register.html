@@ -1,0 +1,47 @@
+{% extends "./layout.html" %}
+
+{% block css_link %}
+<link rel = "stylesheet" href = "{{ url_for('static', filename='css/styles1.css')}}">
+{% endblock %}
+
+{% block js_link %}
+<script src = "{{ url_for('static', filename='js/script2.js')}}"></script>
+{% endblock %}
+
+{% block title %}
+Contestant Registration Page
+{% endblock %}
+
+{% block top_part %}
+<h1>E-CONTEST</h1>
+<div id = "hello">Welcome <br/>Admin</div>
+{% endblock %}
+
+{% block page_content %}
+
+{% if error : %}
+<p id = "err" style = "display: none;">{{error}}</p>
+{% endif %}
+
+<div class = "content">
+	<form name = "register_form" method = "POST" action = "{{url_for('register')}}">
+		<div class = "register-container">
+			{{form.hidden_tag()}}
+			{{form.shaastraID(placeholder = "Shaastra ID")}}
+			<br/>
+			{{form.username(placeholder = "Username")}}
+			<br/>
+			{{form.password(placeholder = "Password")}}
+			<br/>
+			{{form.confirm_password(placeholder = "Confirm Password")}}
+			<br/>
+			{{form.name(placeholder = "Name")}}
+			<br/>
+			{{form.contact(placeholder = "Phone No")}}
+			<br/>
+			{{form.email(placeholder = "Email")}}
+			<input name = "submit" type = "submit" value = "Register">
+		</div>
+	</form>
+</div>
+{% endblock %}

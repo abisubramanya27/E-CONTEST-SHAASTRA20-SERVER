@@ -1,0 +1,48 @@
+{% extends "./layout.html" %}
+
+{% block css_link %}
+<link rel = "stylesheet" href = "{{ url_for('static', filename='css/styles1.css')}}">
+{% endblock %}
+
+{% block js_link %}
+<script src = "{{ url_for('static', filename='js/script1.js')}}"></script>
+{% endblock %}
+
+{% block title %}
+Submissions
+{% endblock %}
+
+{% block top_part %}
+<h1>YOUR SUBMISSIONS</h1>
+<div id = "hello">Welcome {{name}} </div>
+<div id = "timer"></div>
+<form id = "timeform" name = "timeform" method = "POST" action = "{{url_for('dashboard')}}">
+	<input type = "hidden" name = "remTime" id = "remTime" value = "{{rem_time}}">
+</form>
+{% endblock %}
+
+{% block page_content %}
+<div class = "content">
+	<div class = "go-back-link">
+		<a href = "{{url_for('dashboard')}}">GO BACK</a>
+	</div>
+	<div class = "table-container">
+		<table>
+			<tr>
+				<th>#</th>
+				<th>RESULT</th>
+				<th>SCORE</th>
+				<th>SUBMISSION TIME</th>
+			</tr>
+			{% for sub in submissions : %}
+			<tr>
+				<td></td>
+				<td>{{sub.message}}</td>
+				<td>{{sub.mark}}</td>
+				<td>{{to_time("%H:%M:%S",to_ttuple(sub.timeofs))}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

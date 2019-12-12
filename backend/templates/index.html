@@ -1,0 +1,73 @@
+{% extends "./layout.html" %}
+
+{% block css_link %}
+<link rel = "stylesheet" href = "{{ url_for('static', filename='css/styles1.css')}}">
+{% endblock %}
+
+{% block js_link %}
+<script src = "{{ url_for('static', filename='js/script1.js')}}"></script>
+{% endblock %}
+
+{% block title %}
+Contest Home Page
+{% endblock %}
+
+{% block top_part %}
+<h1>ESOLANG CONTEST</h1>
+<div id = "hello">Welcome {{name}} </div>
+<form id = "complete_test" name = "complete_test" method = "POST" action = "{{url_for('dashboard')}}">
+	<input name = "quit" type = "submit" value = "Complete Test" id = "quit" onclick = "confirmSubmit(event);">
+	<input type = "hidden" name = "remTime" id = "remTime" value = "{{rem_time}}">
+</form>
+<div id = "timer">Timer
+</div>
+{% endblock %}
+
+{% block page_content %}
+<div class = "content">
+	<div id = "quick-link-left">
+		<span>GO TO : </span>
+		<a href = "#code-editor">Code Editor</a>
+	</div>
+	<div id = "quick-link-right">
+		<span>GO TO : </span>
+		<a href = "{{url_for('standings')}}" target = "_blank">Standings</a>
+		<br/>
+		<span id = "space-span"></span>
+		<a href = "{{url_for('submissions')}}">Submissions</a>
+	</div>
+	<div id="snackbar">
+		{% with messages = get_flashed_messages() %}
+		    {% if messages %}
+		        {% for message in messages %}
+		           {{message}}
+		        {% endfor %}
+		    {% endif %}
+		{% endwith %}
+	</div>
+	<div class = "custom-select">
+		<select form = "code-edit" id = "question-select" name = "question-select" onchange = "main_page_content()">
+			<option value = "--">--</option>
+			<option value = "INS">Syntax Sheet</option>
+			<option value = "QN1">Question 1</option>
+			<option value = "QN2">Question 2</option>
+			<option value = "QN3">Question 3</option>
+			<option value = "QN4">Question 4</option>
+			<option value = "QN5">Question 5</option>
+		</select>
+	</div>
+
+	<div id = "question-box">
+		<iframe id = "frame1" frameborder="0" height = "100%" width="100%"> </iframe>
+	</div>
+
+	<div id = "code-editor">
+		<h3>CODE EDITOR</h3>
+		<form name = "code-edit" id = "code-edit" method = "POST" action = "{{url_for('dashboard')}}">
+			<textarea name = "code" id = "code-inp" placeholder = "Your code goes here...." required></textarea>
+			<input name = "submit" type = "submit" value = "Submit Code" id = "code-sub">
+		</form>
+	</div>
+
+</div>
+{% endblock %}

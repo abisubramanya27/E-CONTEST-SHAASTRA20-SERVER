@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset = "utf-8">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1">
+	<meta http-equiv = "X-UA-Compatible" content = "ie=edge">
+
+	{% block css_link %}
+	{% endblock %}
+
+	<title> {% block title %}{% endblock %} </title>
+</head>
+
+<body>
+	<div class = "container"></div>
+	<div class = "title-container no-margin">
+		{% block top_part %} 
+		{% endblock %}
+	</div> 
+	{% block page_content %}
+	{% endblock %}
+
+	{% block js_link %}
+	{% endblock %}
+</body>
+
+</html>

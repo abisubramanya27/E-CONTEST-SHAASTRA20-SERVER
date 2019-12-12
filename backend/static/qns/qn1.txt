@@ -1,0 +1,8 @@
+PROBLEM STATEMENT :
+Let S be a string of length 4 consisting of digits ‘0’ to ‘9’. How many strings are there such that the string contains only odd number zeroes? Print the final answer alone.
+
+Note that it is a 4-digit string and not a 4-digit number.
+
+CONSTRAINTS : 0 <= a <= b <= 9
+
+TIME ALLOWED : 5sec

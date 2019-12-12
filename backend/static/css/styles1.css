@@ -1,0 +1,360 @@
+body, html {
+	height : 100%;
+	margin : 0;
+	padding : 0;
+	counter-reset: Count-Value; 
+}
+
+* {
+	box-sizing : border-box;
+}
+
+.container {
+	position: fixed;
+	width : 100%;
+	height : 100%;
+	z-index : -2;
+	background : url("./img/computer.jpg"); 
+	background-repeat : no-repeat;
+	background-size : 100% 100%; 
+}
+
+.title-container {
+	position : fixed;
+	z-index : 1;
+	width : 100%;
+	background-color : rgb(25, 155, 158); 
+	text-align: center;
+	vertical-align: middle;
+	height : 4em;
+}
+
+.no-margin {
+	margin : 0;
+	padding : 0;
+}
+
+h1 {
+	margin : 0;
+	padding-top : 0.5em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#hello {
+	text-align : left; 
+	padding-right: 1em;
+	font-size: 1.3em;
+	position: relative;
+	z-index : 1;
+	top : -2em;
+	float : right;
+	width : 20%;
+	height : 2.6em;
+	overflow: auto;
+}
+
+.content {
+	position : relative;
+	width : 90%;
+	left : 5%;
+	top : 4em;
+}
+
+.login-container {
+	position : relative;
+	top : 5em;
+	left : 30%;
+	width : 40%;
+	height : 25em;
+	background-color : white;
+	padding-top: 1.2em;
+	padding-bottom: 1.2em;
+}
+
+.register-container {
+	position : relative;
+	top : 5em;
+	left : 30%;
+	width : 40%;
+	height : 56em;
+	margin-bottom: 3em;
+	background-color : white;
+	padding-top: 1.2em;
+	padding-bottom: 1.2em;
+}
+
+input[type=text], input[type=submit], input[type=password] {
+  width: 80%;
+  height : 3.8em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+  margin: 4% 8% 4% 8%;
+  display: inline-block;
+  border: 0.1em solid rgb(25, 155, 158);
+  font-size: large;
+}
+
+input[type=password] {
+	margin: 4% 8% 4% 8%;
+}
+
+input[type=submit] {
+  margin: 8%;
+  background-color : rgb(25, 155, 158);
+  color : white;
+  border : none;
+}
+
+input[type=submit]:hover {
+  opacity : 0.8;
+}
+
+.custom-select {
+	position: relative;
+	top : 3em;
+	left : 40%;
+	width : 20%;
+	height : 2.5em;
+}
+
+#question-select {
+	width : 100%;
+	height : 100%;
+}
+
+#question-box {
+	position: absolute;
+	margin-top : 2em;
+	margin-bottom: 2em;
+	padding: 0.6em 0.6em 0.6em 0.6em;
+	width : 90%;
+	height : 40em;
+	top : 10em;
+	left : 5%;
+	background-color: white;
+	overflow : auto;
+	font-size: 20px;
+	border : 3px solid rgb(10, 198, 244);
+	display : none;
+}
+
+#code-editor {
+	position : absolute;
+	margin-bottom: 2em;
+	margin-top : 2em;
+	padding: 0.6em 0.6em 0.6em 0.6em;
+	width : 90%;
+	height : 50em;
+	top : 55em;
+	left : 5%;
+	font-size: 20px;
+	display: none;
+	border : 3px dotted white;
+}
+
+#quick-link-left {
+	display : none;
+	position : relative;
+	width : 18%;
+	top : 4em;
+	left : 4em;
+	background-color: white;
+	text-align: center;
+	font-size: 20px;
+}
+
+#quick-link-right {
+	position : relative;
+	width : 18%;
+	top : 2.5em;
+	left : 75%;
+	background-color: white;
+	text-align: center;
+	font-size: 20px;
+}
+
+.go-back-link {
+	margin : 0;
+	padding : 0;
+	display : block;
+	position: fixed;
+	float : right;
+	z-index : 3;
+	top : 0em;
+	left : 3.5em;
+	width : 7em;
+	height: 4%;
+	text-align: center;
+	background-color: rgb(245, 160, 8);
+}
+
+.go-back-link a {
+	color : black;
+}
+
+.go-back-link a:hover {
+	color : white;
+}
+
+a {
+	text-decoration: none;
+	color : rgb(25,155,158);
+}
+
+a:hover {
+	background-color: rgb(25, 155, 158);
+	color : white;
+}
+
+h3 {
+	padding : 0;
+	margin : 0;
+	color: white;
+}
+
+#code-inp {
+	vertical-align: top;
+	width: 98%;
+    height : 45em;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    margin: 1.2em 0 1.2em 1%;
+    display : block;
+    border: 3px solid rgb(10, 198, 244);
+    font-size: large;
+    white-space: nowrap;
+    overflow: scroll;
+}
+
+#code-sub {
+	width: 15%;
+    height : 2em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+    margin: 1.2em 0 1.2em 1%;
+    display: inline-block;
+    font-size: 100%;
+    border: 0.1em solid rgb(25, 155, 158);
+}
+
+#quit {
+	margin : 0;
+	padding : 0;
+	display : block;
+	text-align : center; 
+	position: fixed;
+	float : right;
+	z-index : 3;
+	top : 0em;
+	left : 3.5em;
+	width : 10%;
+	height: 7%;
+	background-color: rgb(245, 160, 8);
+}
+
+.table-container {
+	position : relative;
+	top : 1em;
+	width: 100%;
+	overflow-x : auto;
+	white-space: nowrap;
+	margin-bottom: 3em;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+	background-color: rgb(10, 198, 244);
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+  color : white;
+}
+
+tr td:first-child:before
+{
+  counter-increment: Count-Value;   
+  content: counter(Count-Value);
+}
+
+#space-span {
+	display: inline-block;
+	width : 40%;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 30%;
+  margin-left: -125px;
+  background-color: white;
+  color: rgb(25, 155, 158);
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 3;
+  left: 75%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -moz-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -ms-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -o-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+#timer {
+    min-width: 9%;
+    margin-right: -125px;
+    background-color: rgb(245, 160, 8);
+    color: white;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 3;
+    left: 0%;
+    top : 10%;
+    font-size: 20px;
+}

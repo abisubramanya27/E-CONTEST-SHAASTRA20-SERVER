@@ -1,0 +1,17 @@
+PROBLEM STATEMENT :
+Accept two single digit numbers a and b and print their sum.
+
+CONSTRAINTS : 0 <= a <= b <= 9
+
+SAMPLE TEST CASE :
+
+INPUT:
+84
+
+OUTPUT:
+12
+
+EXPLANATION :
+a = 8 and b = 4. The sum of 8 and 4 is 12. Hence output is 12.
+
+TIME ALLOWED : 5sec

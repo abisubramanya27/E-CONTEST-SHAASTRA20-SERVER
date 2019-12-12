@@ -1,0 +1,17 @@
+PROBLEM STATEMENT : 
+Accept two single digit numbers digits a and b and output number of single digit numbers between a and b.
+
+CONSTRAINTS : 0 <= a <= b <= 9
+
+SAMPLE TEST CASE :
+
+INPUT:
+24
+
+OUTPUT:
+1
+
+EXPLANATION :
+a = 2 and b = 4. Now there is just one number 3 between 2 and 4, hence output is 1.
+
+TIME ALLOWED : 5sec

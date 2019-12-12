@@ -1,0 +1,6 @@
+,>, Input : ab (cells 1 and 2)
+<[>-<-] b minus a in cell 2
+>[->[-]] subtracting the b minus a by 1 if b minus a is not zero
+++++++++++++ 12 in cell 3
+[>++++[-<<+>>]<-]  increase cell 2 by 48
+<. output number of numbers between a and b

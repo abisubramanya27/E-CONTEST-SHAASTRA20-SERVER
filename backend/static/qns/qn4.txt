@@ -1,0 +1,17 @@
+PROBLEM STATEMENT :
+Accept two single digit numbers a and b and print their product.
+
+CONSTRAINTS : 0 <= a <= b <= 9
+
+SAMPLE TEST CASE :
+
+INPUT:
+26
+
+OUTPUT:
+12
+
+EXPLANATION :
+a = 2 and b = 6. The sum of 2 and 6 is 12. Hence output is 12.
+
+TIME ALLOWED : 5sec

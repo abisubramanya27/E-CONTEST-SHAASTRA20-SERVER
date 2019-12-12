@@ -1,0 +1,18 @@
+2019-12-06 15:30:38.902 IST [52533] LOG:  starting PostgreSQL 12.1 on x86_64-apple-darwin18.7.0, compiled by Apple clang version 11.0.0 (clang-1100.0.33.12), 64-bit
+2019-12-06 15:30:38.904 IST [52533] LOG:  could not bind IPv4 address "127.0.0.1": Address already in use
+2019-12-06 15:30:38.904 IST [52533] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-12-06 15:30:38.904 IST [52533] LOG:  could not bind IPv6 address "::1": Address already in use
+2019-12-06 15:30:38.904 IST [52533] HINT:  Is another postmaster already running on port 5432? If not, wait a few seconds and retry.
+2019-12-06 15:30:38.904 IST [52533] WARNING:  could not create listen socket for "localhost"
+2019-12-06 15:30:38.904 IST [52533] FATAL:  could not create any TCP/IP sockets
+2019-12-06 15:30:38.904 IST [52533] LOG:  database system is shut down
+2019-12-06 16:01:24.106 IST [55662] LOG:  starting PostgreSQL 12.1 on x86_64-apple-darwin18.7.0, compiled by Apple clang version 11.0.0 (clang-1100.0.33.12), 64-bit
+2019-12-06 16:01:24.108 IST [55662] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-12-06 16:01:24.108 IST [55662] LOG:  listening on IPv6 address "::1", port 5432
+2019-12-06 16:01:24.108 IST [55662] FATAL:  could not open lock file "/tmp/.s.PGSQL.5432.lock": Permission denied
+2019-12-06 16:01:24.108 IST [55662] LOG:  database system is shut down
+2019-12-06 16:02:42.938 IST [55738] LOG:  starting PostgreSQL 12.1 on x86_64-apple-darwin18.7.0, compiled by Apple clang version 11.0.0 (clang-1100.0.33.12), 64-bit
+2019-12-06 16:02:42.940 IST [55738] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-12-06 16:02:42.940 IST [55738] LOG:  listening on IPv6 address "::1", port 5432
+2019-12-06 16:02:42.941 IST [55738] FATAL:  could not open lock file "/tmp/.s.PGSQL.5432.lock": Permission denied
+2019-12-06 16:02:42.941 IST [55738] LOG:  database system is shut down
