@@ -28,7 +28,7 @@ networkx==2.3
 nltk==3.4.4
 numpy==1.17.4
 pandas==0.24.2
-Pillow==6.0.0
+Pillow==6.2.0
 protobuf==3.9.1
 psycopg2==2.7.6.1.dev1
 pyasn1==0.4.7
