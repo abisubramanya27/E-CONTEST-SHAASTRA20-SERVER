@@ -30,6 +30,7 @@ Submissions
 		<table>
 			<tr>
 				<th>#</th>
+				<th>QUESTION NUMBER</th>
 				<th>RESULT</th>
 				<th>SCORE</th>
 				<th>SUBMISSION TIME</th>
@@ -37,6 +38,7 @@ Submissions
 			{% for sub in submissions : %}
 			<tr>
 				<td></td>
+				<td>{{sub.qnno}}</td>
 				<td>{{sub.message}}</td>
 				<td>{{sub.mark}}</td>
 				<td>{{to_time("%H:%M:%S",to_ttuple(sub.timeofs))}}</td>

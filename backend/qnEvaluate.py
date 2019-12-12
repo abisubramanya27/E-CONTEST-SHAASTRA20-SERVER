@@ -3,7 +3,7 @@ import os
 import subprocess
 import re
 
-noTC = {'1': 1,'2': 1,'3': 19,'4': 19,'5': 1}
+noTC = {'1': 1,'2': 19,'3': 19,'4': 19,'5': 1}
 
 def score(code,qn_no,pno) :
 	if 'a.out' not in os.listdir(os.getcwd()) :

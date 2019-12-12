@@ -44,6 +44,7 @@ class Submission(db.Model) :
 	id = db.Column(db.Integer,primary_key = True)
 	userid = db.Column(db.Integer,db.ForeignKey('users.id'))
 	user = db.relationship("User",backref = "submission",lazy = True)
+	qnno = db.Column(db.Integer)
 	mark = db.Column(db.Integer)
 	message = db.Column(db.String)
 	timeofs = db.Column(db.Numeric(precision = 14,scale = 4))

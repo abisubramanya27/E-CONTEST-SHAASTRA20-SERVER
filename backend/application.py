@@ -13,6 +13,7 @@ import re
 import sys
 from qnEvaluate import score
 from flask_socketio import SocketIO, emit
+import decimal 
 
 sys.path.append('../evaluation')
 
@@ -21,7 +22,7 @@ app.config['SECRET_KEY'] = "HAVOCRULEZ"
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.secret_key = 'Thisisnottobesharedtoanyone'
 app.config['SESSION_TYPE'] = 'filesystem'
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=0,minutes=1)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1.5)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -91,7 +92,7 @@ def login() :
 			elif user is not None and check_password_hash(user.password,form.password.data) :
 				session.modified = True
 				session.permanent = True
-				app.permanent_session_lifetime = timedelta(minutes=1)
+				app.permanent_session_lifetime = timedelta(hours = 1.5)
 				session['username'] = user.username
 				session['userid'] = user.id
 				session['time'] = time.time()
@@ -148,42 +149,42 @@ def dashboard() :
 						currRes.q1t = init_time
 				elif (qn == 'QN2') :
 					if currRes.q2s == 100 :
-						currRes.q2t = min([currRes.q1t,init_time])
+						currRes.q2t = min([currRes.q2t,init_time])
 					elif currRes.q2s == None or currRes.q2s < 100 :
 						currRes.q2s = 100
 						currRes.q2t = init_time
 				elif (qn == 'QN3') :
 					if currRes.q3s == 100 :
-						currRes.q3t = min([currRes.q1t,init_time])
+						currRes.q3t = min([currRes.q3t,init_time])
 					elif currRes.q3s == None or currRes.q3s < 100 :
 						currRes.q3s = 100
 						currRes.q3t = init_time
 				elif (qn == 'QN4') :
 					if currRes.q4s == 100 :
-						currRes.q4t = min([currRes.q1t,init_time])
+						currRes.q4t = min([currRes.q4t,init_time])
 					elif currRes.q4s == None or currRes.q4s < 100 :
 						currRes.q4s = 100
 						currRes.q4t = init_time
 				elif (qn == 'QN5') :
 					if currRes.q5s == 100 :
-						currRes.q5t = min([currRes.q1t,init_time])
+						currRes.q5t = min([currRes.q5t,init_time])
 					elif currRes.q5s == None or currRes.q5s < 100 :
 						currRes.q5s = 100
 						currRes.q5t = init_time
-				submis = Submission(userid = session['userid'],mark = 100,message = res,timeofs = init_time)
+				submis = Submission(userid = session['userid'],mark = 100,message = res,timeofs = init_time,qnno = int(qn_no))
 
 			else :
 				if (qn == 'QN1') :
 					currRes.q1s = currRes.q1s if currRes.q1s is not None else 0
 				elif (qn == 'QN2') :
-					currRes.q2s = currRes.q2s if currRes.q1s is not None else 0
+					currRes.q2s = currRes.q2s if currRes.q2s is not None else 0
 				elif (qn == 'QN3') :
-					currRes.q3s = currRes.q3s if currRes.q1s is not None else 0
+					currRes.q3s = currRes.q3s if currRes.q3s is not None else 0
 				elif (qn == 'QN4') :
-					currRes.q4s = currRes.q4s if currRes.q1s is not None else 0
+					currRes.q4s = currRes.q4s if currRes.q4s is not None else 0
 				elif (qn == 'QN5') :
-					currRes.q5s = currRes.q5s if currRes.q1s is not None else 0
-				submis = Submission(userid = session['userid'],mark = 0,message = res,timeofs = init_time)
+					currRes.q5s = currRes.q5s if currRes.q5s is not None else 0
+				submis = Submission(userid = session['userid'],mark = 0,message = res,timeofs = init_time,qnno = int(qn_no))
 
 			db.session.add(submis)
 
@@ -191,7 +192,7 @@ def dashboard() :
 			timel = [currRes.q1t,currRes.q2t,currRes.q3t,currRes.q4t,currRes.q5t]
 			pno += 1
 			currRes.tot_score = sum([e for e in scorel if e is not None])
-			currRes.tot_time = sum([e for e in timel if e is not None])
+			currRes.tot_time = sum([decimal.Decimal(e) for e in timel if e is not None])
 
 			db.session.commit()
 
@@ -221,7 +222,7 @@ def register() :
 
 		if (request.method == 'POST' and form.validate_on_submit()) :
 			if User.query.filter_by(username = form.username.data).count() == 0 :
-				new_user = User(done = False,rem_time = 60,username = form.username.data,password = generate_password_hash(form.confirm_password.data),email = form.email.data,shaastraID = form.shaastraID.data,name = form.name.data,contact = form.contact.data)
+				new_user = User(done = False,rem_time = 5400,username = form.username.data,password = generate_password_hash(form.confirm_password.data),email = form.email.data,shaastraID = form.shaastraID.data,name = form.name.data,contact = form.contact.data)
 				db.session.add(new_user)
 				db.session.commit() 
 			return '<h1>' + 'Successfully Registered Contestant' + '</h1>'
