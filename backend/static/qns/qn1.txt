@@ -6,3 +6,7 @@ Note that it is a 4-digit string and not a 4-digit number.
 CONSTRAINTS : 0 <= a <= b <= 9
 
 TIME ALLOWED : 5sec
+
+NOTE : 
+Print the string representing the answer not the character with answer as it's ASCII value.
+So, if the answer is 12345 the output should be "12345".

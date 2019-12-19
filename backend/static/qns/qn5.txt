@@ -1,0 +1,32 @@
+PROBLEM STATEMENT :
+The Joker reveals the locations of Rachel and Harvey Dent to Batman during the interrogation. Batman is presently at location x = b. Joker has randomly chosen two locations - a and c. He has locked Harvey at x = a, and Rachel at x = c.
+To make the situation even crazier, he gives you a power. You can independently shift each location either to the left by 1 unit or to the right by 1 unit, or choose to leave it as it is.
+Joker wants to know the separation corresponding to the configuration he randomly chose.
+"SEPARATION" is defined as the minimum value of |a-b| + |b-c| + |c-a| after you finish your allowed operations.
+He hasn't still realised that he can't trust people these days, and entrusts you with that job as well. 
+If you want to know the real reason why Joker got the scars on his face, find the answer for him. Of course you are not doing it for free, you get marks.
+
+You will be given a, b and c, find the separation corresponding to the configuration.
+
+CONSTRAINTS : 0 <= a <= b <= c <= 9
+
+SAMPLE TEST CASE :
+
+INPUT:
+126
+
+OUTPUT:
+6
+
+EXPLANATION :
+a = 1, b = 2, c = 6.
+Shift a by 1 unit to the right, b by 1 unit to the right, and c by 1 unit to the left.
+The configuration changes to a = 2, b = 3, c = 5.
+The separation for the given configuration is thus 6. You can try out all possible configurations and convince that this is the minimum. 
+
+TIME ALLOWED : 5sec
+
+NOTE : 
+Print the character which will have (48 + answer) as its ASCII value.
+So, if the answer is 3 output will be '3' (48 + 3 = 51, and this corresponds to the character '3').
+Similarly if the answer is 10, the output will be ':' (colon) because 48 + 10 = 58 and the character with ASCII value 58 is Colon (:).

@@ -23,7 +23,13 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.secret_key = 'Thisisnottobesharedtoanyone'
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1.5)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+
+ENV = 'dev'
+if ENV == 'dev' :
+	app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+else :
+	app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+	
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)

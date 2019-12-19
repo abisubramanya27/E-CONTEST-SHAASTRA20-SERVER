@@ -15,3 +15,7 @@ EXPLANATION :
 a = 2 and b = 6. The product of 2 and 6 is 12. Hence output is 12.
 
 TIME ALLOWED : 5sec
+
+NOTE : 
+Print the string representing the answer not the character with answer as it's ASCII value.
+So, if the answer is 12 print '12' and not the character with ASCII value 12.
