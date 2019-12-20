@@ -26,10 +26,12 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1.5)
 
 ENV = 'dev'
 if ENV == 'dev' :
+	app.debug = True
 	app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 else :
-	app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
-	
+	app.debug = False
+	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ofkyawpdjvlppl:e98959750f19e6517d4e8eabf5710d40bb4f7d5c1cb7b3ad0e645efee910acf3@ec2-174-129-234-111.compute-1.amazonaws.com:5432/dduv1ph7hquc21'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
