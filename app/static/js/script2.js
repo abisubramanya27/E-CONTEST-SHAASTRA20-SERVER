@@ -9,8 +9,13 @@ document.addEventListener('DOMContentLoaded',() => {
 	}
 });
 
-function disableBack() { window.history.forward() }
+function disableBack() { 
+	window.history.forward();
+ }
 
 window.onpageshow = function(evt) { if (evt.persisted) disableBack() };
 
-window.onload = disableBack;
+window.addEventListener('load', () => {
+	disableBack();
+	setTimeout(() => {document.querySelector('#loader').style.display = 'none';},2000);
+});

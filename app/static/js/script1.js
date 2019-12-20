@@ -1,5 +1,6 @@
 window.onload = () => {
 	disableBack();
+	document.querySelector('#loader').style.display = 'none';
 	showSnackbar();
 	var disp = document.querySelector('#timer');
 	var time = document.querySelector('#remTime');
@@ -59,7 +60,7 @@ function main_page_content() {
 		l1.style.display = 'none';
 	}
 	else if (val == 'INS') {
-		fr.src = "";
+		fr.src = "../static/qns/instructions.txt";
 		box1.style.display = 'block';
 		box2.style.display = 'none';
 		l1.style.display = 'none';
@@ -88,8 +89,14 @@ function main_page_content() {
 }
 
 function confirmSubmit (e) {
-	if(!confirm('Are you sure?')) e.preventDefault();
-	else localStorage.removeItem("remtime");
+	if(!confirm('Are you sure?')) {
+		e.preventDefault();
+	}
+	else {
+		localStorage.removeItem("remtime");
+		localStorage.clear();
+		window.localStorage.clear();
+	}
 }
 
 function showSnackbar() {

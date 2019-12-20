@@ -1,6 +1,6 @@
 PROBLEM STATEMENT :
 The Joker reveals the locations of Rachel and Harvey Dent to Batman during the interrogation. Batman is presently at location x = b. Joker has randomly chosen two locations - a and c. He has locked Harvey at x = a, and Rachel at x = c.
-To make the situation even crazier, he gives you a power. You can independently shift each location either to the left by 1 unit or to the right by 1 unit, or choose to leave it as it is.
+To make the situation even crazier, he gives you a power. You can independently shift each of the three locations (a, b, and c) either to the left by 1 unit or to the right by 1 unit, or choose to leave it as it is.
 Joker wants to know the separation corresponding to the configuration he randomly chose.
 "SEPARATION" is defined as the minimum value of |a-b| + |b-c| + |c-a| after you finish your allowed operations.
 He hasn't still realised that he can't trust people these days, and entrusts you with that job as well. 
