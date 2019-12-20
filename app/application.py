@@ -24,7 +24,9 @@ app.secret_key = 'Thisisnottobesharedtoanyone'
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1.5)
 
-ENV = 'dev'
+app.listen((process.env.PORT || 5000)
+
+ENV = 'PROD'
 if ENV == 'dev' :
 	app.debug = True
 	app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
@@ -259,6 +261,5 @@ def submissions() :
 	subs = usr.submission
 	return render_template('submissions.html',name = session['username'],submissions = subs,to_time = time.strftime,to_ttuple = time.gmtime)
 
-
 if __name__ == '__main__' :
-	app.run(debug=True)
+	app.run()
