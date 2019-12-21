@@ -4,14 +4,14 @@ from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length, EqualTo
 from flask_session import Session
 import os
-from class_orm import db,User,Result,Submission
+from app.class_orm import db,User,Result,Submission
 import time
 from datetime import datetime, timedelta
 from werkzeug import generate_password_hash,check_password_hash
 import threading
 import re
 import sys
-from qnEvaluate import score
+from app.qnEvaluate import score
 from flask_socketio import SocketIO, emit
 import decimal 
 
