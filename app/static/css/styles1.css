@@ -74,7 +74,7 @@ body, html {
 	width : 100%;
 	height : 100%;
 	z-index : -2;
-	background : url("./img/computer.jpg"); 
+	background-color: black; 
 	background-repeat : no-repeat;
 	background-size : 100% 100%; 
 }
