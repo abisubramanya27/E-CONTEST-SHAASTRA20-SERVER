@@ -11,7 +11,7 @@ body, html {
 
 #loader {
 	position: fixed;
-	background : url("./img/backgrnd.jpg"); 
+	background-color: white; 
 	background-repeat: no-repeat;
 	background-size : 100% 100%; 
 	width: 100%;
@@ -64,7 +64,7 @@ body, html {
 	left : 20%;
 	width: 8%;
 	height: 10%;
-	background : url("./img/american-express-logo.png"); 
+	background-color: black; 
 	background-repeat : no-repeat;
 	background-size : 100% 100%; 
 }
