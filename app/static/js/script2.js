@@ -17,5 +17,5 @@ window.onpageshow = function(evt) { if (evt.persisted) disableBack() };
 
 window.addEventListener('load', () => {
 	disableBack();
-	document.querySelector('#loader').style.display = 'none';
+	setTimeout(() => {document.querySelector('#loader').style.display = 'none';},1000);
 });

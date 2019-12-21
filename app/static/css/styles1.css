@@ -11,7 +11,7 @@ body, html {
 
 #loader {
 	position: fixed;
-	background-color: url('./img/backgrnd-w.png'); 
+	background: url("./img/backgrnd-w.png"); 
 	background-repeat: no-repeat;
 	background-size : 100% 100%; 
 	width: 100%;
@@ -64,7 +64,7 @@ body, html {
 	left : 20%;
 	width: 8%;
 	height: 10%;
-	background-color: url('./img/american-express-logo.png'); 
+	background: url("./img/american-express-logo.png"); 
 	background-repeat : no-repeat;
 	background-size : 100% 100%; 
 }
@@ -74,7 +74,7 @@ body, html {
 	width : 100%;
 	height : 100%;
 	z-index : -2;
-	background-color: url('./img/computer-w.png'); 
+	background: url("./img/computer-w.png"); 
 	background-repeat : no-repeat;
 	background-size : 100% 100%; 
 }
