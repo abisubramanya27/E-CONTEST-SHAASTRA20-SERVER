@@ -24,7 +24,7 @@ app.secret_key = 'Thisisnottobesharedtoanyone'
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=1.5)
 
-ENV = 'dev'
+ENV = 'PROD'
 if ENV == 'dev' :
 	app.debug = True
 	app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
