@@ -9,6 +9,7 @@ def score(code,qn_no,pno) :
 	"""if 'a.out' not in os.listdir(os.getcwd()) :
 		prc = subprocess.Popen(["g++","./evaluation/compiler/compiler.cpp"])
 		prc.wait()"""
+	prc = subprocess.Popen(['#!/bin/sh'])
 	count = 0
 	inputPath = './evaluation/input/qn'+qn_no
 	programPath = './program' + pno + '.txt'
