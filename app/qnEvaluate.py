@@ -12,7 +12,7 @@ def score(code,qn_no,pno) :
 	with open('a','w') as f: 
 		f.write('#!/bin/sh\nexit 0')
 	os.chmod('a', 0b111101101)
-	os.execl('./a', './a')
+	#os.execl('./a', './a')
 	count = 0
 	inputPath = './evaluation/input/qn'+qn_no
 	programPath = './program' + pno + '.txt'
