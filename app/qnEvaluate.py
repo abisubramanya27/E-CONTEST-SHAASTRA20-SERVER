@@ -21,7 +21,7 @@ def score(code,qn_no,pno) :
 			with open(outputfilePath,'w+') as mfile :
 				count += 1
 				inpfilePath = './evaluation/input/qn' + qn_no + '/' + filename
-				proc = subprocess.Popen(["./a.out", programPath , inpfilePath, outputfilePath],stderr = subprocess.PIPE,stdout = subprocess.PIPE)
+				proc = subprocess.Popen(["./app/a.out", programPath , inpfilePath, outputfilePath],stderr = subprocess.PIPE,stdout = subprocess.PIPE)
 				try :
 					(stdoutdata,stderrdata) = proc.communicate(timeout = 6)
 				except subprocess.TimeoutExpired :
@@ -42,7 +42,7 @@ def score(code,qn_no,pno) :
 					os.remove(programPath)
 					return 'RUNTIME ERROR'						
 
-				with open('./app/evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') as tgtfile :
+				with open('./evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') as tgtfile :
 					if filecmp.cmp(outputfilePath,'./evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') :
 						pass
 					else :
