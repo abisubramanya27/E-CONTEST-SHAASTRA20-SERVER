@@ -7,10 +7,10 @@ noTC = {'1': 1,'2': 19,'3': 19,'4': 19,'5': 1}
 
 def score(code,qn_no,pno) :
 	"""if 'a.out' not in os.listdir(os.getcwd()) :
-		prc = subprocess.Popen(["g++","../evaluation/compiler/compiler.cpp"])
+		prc = subprocess.Popen(["g++","./evaluation/compiler/compiler.cpp"])
 		prc.wait()"""
 	count = 0
-	inputPath = '../evaluation/input/qn'+qn_no
+	inputPath = './evaluation/input/qn'+qn_no
 	programPath = './program' + pno + '.txt'
 	with open(programPath,'w+') as pfile :
 		pfile.write(code)
@@ -20,7 +20,7 @@ def score(code,qn_no,pno) :
 			outputfilePath = './output' + pno + '.txt'
 			with open(outputfilePath,'w+') as mfile :
 				count += 1
-				inpfilePath = '../evaluation/input/qn' + qn_no + '/' + filename
+				inpfilePath = './evaluation/input/qn' + qn_no + '/' + filename
 				proc = subprocess.Popen(["./a.out", programPath , inpfilePath, outputfilePath],stderr = subprocess.PIPE,stdout = subprocess.PIPE)
 				try :
 					(stdoutdata,stderrdata) = proc.communicate(timeout = 6)
@@ -42,8 +42,8 @@ def score(code,qn_no,pno) :
 					os.remove(programPath)
 					return 'RUNTIME ERROR'						
 
-				with open('../evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') as tgtfile :
-					if filecmp.cmp(outputfilePath,'../evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') :
+				with open('./evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') as tgtfile :
+					if filecmp.cmp(outputfilePath,'./evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') :
 						pass
 					else :
 						mfile.close()
