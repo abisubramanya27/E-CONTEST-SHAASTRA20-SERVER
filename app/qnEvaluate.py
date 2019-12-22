@@ -2,16 +2,13 @@ import filecmp
 import os
 import subprocess
 import re
-import sys
 
 noTC = {'1': 1,'2': 19,'3': 19,'4': 19,'5': 1}
 
 def score(code,qn_no,pno) :
-	print(os.getcwd())
-	sys.stdout.flush()
-	if 'a.out' not in os.listdir(os.getcwd()) :
+	"""if 'a.out' not in os.listdir(os.getcwd()) :
 		prc = subprocess.Popen(["g++","../evaluation/compiler/compiler.cpp"])
-		prc.wait()
+		prc.wait()"""
 	count = 0
 	inputPath = '../evaluation/input/qn'+qn_no
 	programPath = './program' + pno + '.txt'
