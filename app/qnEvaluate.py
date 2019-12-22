@@ -2,17 +2,17 @@ import filecmp
 import os
 import re
 import multiprocessing
-from compiler import interpret
+from app.compiler import interpret
 
 noTC = {'1': 1,'2': 19,'3': 19,'4': 19,'5': 16}
 
 def score(code,qn_no,pno) :
 	count = 0
-	inputPath = './evaluation/input/qn'+qn_no
+	inputPath = './app/evaluation/input/qn'+qn_no
 	for filename in os.listdir(inputPath) :
 		if 'tc' in filename :
 			fno = re.sub('[^0-9]+','',filename)
-			outputfilePath = './evaluation/output' + pno + '.txt'
+			outputfilePath = './app/evaluation/output' + pno + '.txt'
 			with open(outputfilePath,'w+') as mfile :
 				count += 1
 				inpfilePath = inputPath + '/' + filename
@@ -31,8 +31,8 @@ def score(code,qn_no,pno) :
 					return 'TIME LIMIT EXCEEDED'
 				else :
 					if Message == 'ANSWER WRITTEN' :
-						with open('./evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') as tgtfile :
-							if filecmp.cmp(outputfilePath,'./evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') :
+						with open('./app/evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') as tgtfile :
+							if filecmp.cmp(outputfilePath,'./app/evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') :
 								pass
 							else :
 								mfile.close()
