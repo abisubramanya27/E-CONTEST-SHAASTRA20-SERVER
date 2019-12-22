@@ -1,0 +1,2 @@
+all:
+    g++ ./evaluation/compiler/compiler.cpp -o a.out
