@@ -42,7 +42,7 @@ def score(code,qn_no,pno) :
 					os.remove(programPath)
 					return 'RUNTIME ERROR'						
 
-				with open('./evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') as tgtfile :
+				with open('./app/evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') as tgtfile :
 					if filecmp.cmp(outputfilePath,'./evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') :
 						pass
 					else :
