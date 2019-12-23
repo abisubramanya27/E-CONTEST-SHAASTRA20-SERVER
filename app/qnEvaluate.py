@@ -18,17 +18,13 @@ def score(code,qn_no,pno) :
 				inpfilePath = inputPath + '/' + filename
 				Q = multiprocessing.Queue()
 				prc = multiprocessing.Process(target = interpret,args = (code,inpfilePath,outputfilePath,Q))
+				prc.daemon = True
 				prc.start()
 
 				prc.join(5)
-				print('##############TIME LIMIT EXCEEDED1')
 
 				if prc.is_alive() :
-					print('##############TIME LIMIT EXCEEDED2')
 					prc.terminate()
-					print('##############TIME LIMIT EXCEEDED3')
-					prc.join()
-					print('##############TIME LIMIT EXCEEDED4')
 					mfile.close()
 					os.remove(outputfilePath)
 					return 'TIME LIMIT EXCEEDED'
