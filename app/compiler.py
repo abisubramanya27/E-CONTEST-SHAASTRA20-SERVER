@@ -24,6 +24,7 @@ def interpret(program,inputPath,outputPath,Q) :
 	with open(inputPath,'r') as f :
 		inp_buff = f.read()
 	inp_buff = inp_buff.strip()
+	inplen = len(inp_buff)
 
 	ind = 0
 	while (ind < strlen) :
@@ -46,7 +47,7 @@ def interpret(program,inputPath,outputPath,Q) :
 			if (ptr >= MAX_CELLS) :
 				ptr = 0
 		elif (program[ind] == ',') :
-			if (inp_ind >= len(inp_buff)) :
+			if (inp_ind >= inplen) :
 				Q.put(f"RUNTIME ERROR : Line {lineno}")
 				return
 			data[ptr] = ord(inp_buff[inp_ind])
@@ -80,7 +81,6 @@ def interpret(program,inputPath,outputPath,Q) :
 				return
 			if (data[ptr] == 0) :
 				brackets.pop()
-				ind += 1
 			else :
 				lineno = brackets[-1][1]
 				ind = brackets[-1][0]
@@ -97,4 +97,3 @@ def interpret(program,inputPath,outputPath,Q) :
 
 	Q.put("ANSWER WRITTEN")
 	return
-
