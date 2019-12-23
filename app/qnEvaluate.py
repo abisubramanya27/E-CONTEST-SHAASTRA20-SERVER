@@ -21,11 +21,13 @@ def score(code,qn_no,pno) :
 				prc.start()
 
 				prc.join(5)
-				print('##############TIME LIMIT EXCEEDED')
+				print('##############TIME LIMIT EXCEEDED1')
 
 				if prc.is_alive() :
+					print('##############TIME LIMIT EXCEEDED2')
 					prc.terminate()
 					prc.join()
+					print('##############TIME LIMIT EXCEEDED3')
 					mfile.close()
 					os.remove(outputfilePath)
 					return 'TIME LIMIT EXCEEDED'
