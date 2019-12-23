@@ -25,8 +25,6 @@ def score(code,qn_no,pno) :
 				if prc.is_alive() :
 					prc.terminate()
 					prc.join()
-					mfile.close()
-					os.remove(outputfilePath)
 					return 'TIME LIMIT EXCEEDED'
 				else :
 					Message = Q.get()
@@ -35,6 +33,7 @@ def score(code,qn_no,pno) :
 							if filecmp.cmp(outputfilePath,'./app/evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') :
 								pass
 							else :
+								tgtfile.close()
 								mfile.close()
 								os.remove(outputfilePath)
 								return 'WRONG ANSWER'
