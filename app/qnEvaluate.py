@@ -20,7 +20,7 @@ def score(code,qn_no,pno) :
 				prc = multiprocessing.Process(target = interpret,args = (code,inpfilePath,outputfilePath,Q))
 				prc.start()
 
-				prc.join(5)
+				prc.join(3)
 
 				if prc.is_alive() :
 					prc.terminate()
