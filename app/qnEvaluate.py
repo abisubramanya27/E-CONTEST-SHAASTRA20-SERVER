@@ -25,6 +25,9 @@ def score(code,qn_no,pno) :
 				if prc.is_alive() :
 					prc.terminate()
 					prc.join()
+					mfile.close()
+					os.remove(outputfilePath)
+					print('#######################TIME LIMIT EXCEEDED')
 					return 'TIME LIMIT EXCEEDED'
 				else :
 					Message = Q.get()
@@ -42,6 +45,6 @@ def score(code,qn_no,pno) :
 						os.remove(outputfilePath)
 						return Message
 			
-			os.remove(outputfilePath)
-
+	os.remove(outputfilePath)
+	print('#####################CORRECT ANSWER')
 	return 'CORRECT ANSWER'
