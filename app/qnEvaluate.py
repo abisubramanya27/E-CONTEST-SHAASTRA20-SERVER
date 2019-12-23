@@ -20,13 +20,14 @@ def score(code,qn_no,pno) :
 				prc = multiprocessing.Process(target = interpret,args = (code,inpfilePath,outputfilePath,Q))
 				prc.start()
 
-				prc.join(6)
+				prc.join(5)
 
 				if prc.is_alive() :
 					prc.terminate()
 					prc.join()
 					mfile.close()
 					os.remove(outputfilePath)
+					print('##############TIME LIMIT EXCEEDED')
 					return 'TIME LIMIT EXCEEDED'
 				else :
 					Message = Q.get()
