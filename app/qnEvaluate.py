@@ -39,6 +39,7 @@ def score(code,qn_no,pno) :
 								tgtfile.close()
 								mfile.close()
 								os.remove(outputfilePath)
+								print('#######################WRONG ANSWER')
 								return 'WRONG ANSWER'
 					else :
 						mfile.close()
