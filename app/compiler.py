@@ -17,6 +17,10 @@ def interpret(program,inputPath,outputPath,Q) :
 	global lineno, ptr, data, brackets, inp_buff, out_buff, inp_ind
 
 	strlen = len(program)
+	if (strlen > MAX_SIZE) :
+		Q.put("MEMORY LIMIT EXCEEDED")
+		return
+
 	with open(inputPath,'r') as f :
 		inp_buff = f.read()
 	inp_buff = inp_buff.strip()
@@ -45,7 +49,7 @@ def interpret(program,inputPath,outputPath,Q) :
 			if (inp_ind >= len(inp_buff)) :
 				Q.put(f"RUNTIME ERROR : Line {lineno}")
 				return
-			data[ptr] = inp_buff[inp_ind]
+			data[ptr] = ord(inp_buff[inp_ind])
 			inp_ind += 1
 		elif (program[ind] == '.') :
 			out_buff += str(chr(data[ptr]))
