@@ -14,6 +14,7 @@ import sys
 from app.qnEvaluate import score
 from flask_socketio import SocketIO, emit
 import decimal 
+from sqlalchemy import nullslast
 
 sys.path.append('../evaluation')
 
@@ -246,7 +247,7 @@ def register() :
 
 @app.route('/standings')
 def standings() :
-	res = Result.query.order_by(Result.tot_score.desc(),Result.tot_time).all()
+	res = Result.query.order_by(nullslast(Result.tot_score.desc()),Result.tot_time).all()
 	return render_template('standings.html',results = res)
 
 @app.route('/submissions')
