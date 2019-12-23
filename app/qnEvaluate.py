@@ -20,7 +20,6 @@ def score(code,qn_no,pno) :
 				prc = multiprocessing.Process(target = interpret,args = (code,inpfilePath,outputfilePath,Q))
 				prc.start()
 
-				Message = Q.get()
 				prc.join(6)
 
 				if prc.is_alive() :
@@ -30,6 +29,7 @@ def score(code,qn_no,pno) :
 					os.remove(outputfilePath)
 					return 'TIME LIMIT EXCEEDED'
 				else :
+					Message = Q.get()
 					if Message == 'ANSWER WRITTEN' :
 						with open('./app/evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') as tgtfile :
 							if filecmp.cmp(outputfilePath,'./app/evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') :
