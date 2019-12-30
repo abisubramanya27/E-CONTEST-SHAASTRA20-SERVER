@@ -51,16 +51,15 @@ function main_page_content() {
 	var box1 = document.querySelector('#question-box');
 	var box2 = document.querySelector('#code-editor');
 	var l1 = document.querySelector('#quick-link-left');
-	var fr = document.querySelector('#frame1');
+	//var fr = document.querySelector('#frame1');
 
 	if (val == '--') {
-		fr.src = "";
 		box1.style.display = 'none';
 		box2.style.display = 'none';
 		l1.style.display = 'none';
 	}
 	else if (val == 'INS') {
-		fr.src = "../static/qns/instructions.txt";
+		$("#question-box").load("../static/qns/instructions.txt");
 		box1.style.display = 'block';
 		box2.style.display = 'none';
 		l1.style.display = 'none';
@@ -70,19 +69,25 @@ function main_page_content() {
 		box2.style.display = 'block';
 		l1.style.display = 'block';
 		if (val == 'QN1') {
-			fr.src = "../static/qns/qn1.txt";
+			$("#question-box").load("../static/qns/qn1.txt");
 		}
 		else if (val == 'QN2') {
-			fr.src = "../static/qns/qn2.txt";
+			$("#question-box").load("../static/qns/qn2.txt");
 		}
 		else if (val == 'QN3') {
-			fr.src = "../static/qns/qn3.txt";
+			$("#question-box").load("../static/qns/qn3.txt");
 		}
 		else if (val == 'QN4') {
-			fr.src = "../static/qns/qn4.txt";
+			$("#question-box").load("../static/qns/qn4.txt");
 		}
 		else if (val == 'QN5') {
-			fr.src = "../static/qns/qn5.txt";
+			$("#question-box").load("../static/qns/qn5.txt");
+		}
+		else if (val == 'QN6') {
+			$("#question-box").load("../static/qns/qn6.txt");
+		}
+		else if (val == 'QN7') {
+			$("#question-box").load("../static/qns/qn7.txt");
 		}
 	}
 

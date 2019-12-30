@@ -1,0 +1,39 @@
+				NEVER DENY ANYTHING IF FREE!
+
+PROBLEM STATEMENT :
+American Express also gives an option of getting supplementary cards for free with the purchase of each credit card.					
+
+For example for an American Express Platinum Card one can get 4 supplementary cards for free. 
+There are totally ‘b’ uniques types of credit cards marketed by Amex. 
+Now your task is to find the total number of supplementary cards that can be obtained for free, 
+given that you purchase 'a' credit cards with each of them allowing ‘c’ supplementary cards for free.
+
+
+*********************************************************************************
+CONSTRAINTS : 0 <= a,b,c <= 9
+
+INPUT :
+abc
+
+OUTPUT :
+The total number of supplementary cards obtained for free
+*********************************************************************************
+SAMPLE TEST CASE :
+
+INPUT:
+26
+
+OUTPUT:
+12
+
+EXPLANATION :
+a = 2 and b = 6. The product of 2 and 6 is 12. Hence output is 12.
+
+*********************************************************************************
+TIME ALLOWED : 5sec
+
+MEMORY LIMIT : Maximum 10^5 commands are only allowed.
+
+NOTE : 
+Print the string representing the answer not the character with answer as it's ASCII value.
+So, if the answer is 12 print '12' (without the quotes) and not the character with ASCII value 12.

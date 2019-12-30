@@ -187,14 +187,18 @@ input[type=submit]:hover {
 	position: absolute;
 	margin-top : 2em;
 	margin-bottom: 2em;
-	padding: 0.6em 0.6em 0.6em 0.6em;
+	padding: 0.6em 0.4em 0.6em 0.6em;
 	width : 90%;
 	height : 40em;
 	top : 10em;
 	left : 5%;
-	background-color: white;
-	overflow : auto;
-	font-size: 20px;
+	background-color: whitesmoke;
+	overflow: auto;
+	white-space: pre;
+	font-size: 16px;
+	font-family: "Courier New", Courier, monospace, Helvetica, Arial, serif;
+	font-weight: 600;
+	font-style: normal;
 	border : 3px solid rgb(10, 198, 244);
 	display : none;
 }
@@ -208,7 +212,7 @@ input[type=submit]:hover {
 	height : 50em;
 	top : 55em;
 	left : 5%;
-	font-size: 20px;
+	font-size: 16px;
 	display: none;
 	border : 3px dotted white;
 }
@@ -219,7 +223,7 @@ input[type=submit]:hover {
 	width : 18%;
 	top : 4em;
 	left : 4em;
-	background-color: white;
+	background-color: whitesmoke;
 	text-align: center;
 	font-size: 20px;
 }
@@ -229,7 +233,7 @@ input[type=submit]:hover {
 	width : 18%;
 	top : 2.5em;
 	left : 75%;
-	background-color: white;
+	background-color: whitesmoke;
 	text-align: center;
 	font-size: 20px;
 }

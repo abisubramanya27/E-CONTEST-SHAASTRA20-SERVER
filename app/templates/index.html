@@ -6,6 +6,7 @@
 
 {% block js_link %}
 <script src = "{{ url_for('static', filename='js/script1.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 {% endblock %}
 
 {% block title %}
@@ -52,13 +53,13 @@ Contest Home Page
 			<option value = "QN1">Question 1</option>
 			<option value = "QN2">Question 2</option>
 			<option value = "QN3">Question 3</option>
-			<option value = "QN4">Question 4</option>
+			<option value = "QN7">Question 4</option>
 			<option value = "QN5">Question 5</option>
 		</select>
 	</div>
 
 	<div id = "question-box">
-		<iframe id = "frame1" frameborder="0" height = "100%" width="100%"> </iframe>
+		<!--<iframe id = "frame1" frameborder="0" height = "100%" width = "100%"> </iframe>-->
 	</div>
 
 	<div id = "code-editor">

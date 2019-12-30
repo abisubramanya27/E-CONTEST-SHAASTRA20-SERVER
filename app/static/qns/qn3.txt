@@ -1,8 +1,22 @@
-PROBLEM STATEMENT :
-Accept two single digit numbers a and b and print their sum.
+                          DON'T LEAVE HOME WITHOUT THEM!
 
-CONSTRAINTS : 0 <= a <= b <= 9
+PROBLEM STATEMENT : 
+A certain Mr. Frost organised a huge get together for New Year celebrations. 
+After all the fest and gaiety of Christmas, they decided to go out for dinner for one last hurrah of the year on New Year’s eve. 
+As they were eating their sumptuous dinner, he received a call from the butler of his house that there were ‘a’ Amex cards left behind in the house. 
 
+If Mr. Frost has 'b' Amex cards with him now, what are the total number of Amex cards he owns?
+
+*********************************************************************************
+CONSTRAINTS : 0 <= a,b <= 9 (They are single digit whole numbers)
+
+INPUT :
+ab
+
+OUTPUT :
+Total number of Amex Cards in a single line
+
+*********************************************************************************
 SAMPLE TEST CASE :
 
 INPUT:
@@ -14,8 +28,11 @@ OUTPUT:
 EXPLANATION :
 a = 8 and b = 4. The sum of 8 and 4 is 12. Hence output is 12.
 
+*********************************************************************************
 TIME ALLOWED : 5sec
+
+MEMORY LIMIT : Maximum 10^5 commands are only allowed.
 
 NOTE : 
 Print the string representing the answer not the character with answer as it's ASCII value.
-So, if the answer is 12 print '12' and not the character with ASCII value 12.
+So, if the answer is 12 print "12" (without the quotes) and not the character with ASCII value 12.

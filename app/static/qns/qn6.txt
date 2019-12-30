@@ -1,0 +1,39 @@
+				HAPPENS ONLY IN CONTESTS!
+
+PROBLEM STATEMENT :
+Abishek being a thrifty person, always looks for good discounts and cash-backs. 
+When he decided to purchase a latest Macbook worth $’a’ (in lakhs), he decided to use his Amex Blue Cash Everyday credit card to purchase it, 
+because it offered a cashback of $’b’ (in lakhs) for the purchase. 
+Also, the retailer from which he decided to purchase the Mac offered a discount of $’c’ (in lakhs). 
+
+Find the total amount of money Abishek has saved.
+
+*********************************************************************************
+CONSTRAINTS : 0 <= a,b,c <= 9 (They are single digit whole numbers)
+
+INPUT :
+abc
+
+OUTPUT :
+Total money Abishek saved
+
+*********************************************************************************
+SAMPLE TEST CASE :
+
+INPUT:
+666
+
+OUTPUT:
+12
+
+EXPLANATION :
+a = 8 and b = 4. The sum of 8 and 4 is 12. Hence output is 12.
+
+*********************************************************************************
+TIME ALLOWED : 5sec
+
+MEMORY LIMIT : Maximum 10^5 commands are only allowed.
+
+NOTE : 
+Print the string representing the answer not the character with answer as it's ASCII value.
+So, if the answer is 12 print "12" (without the quotes) and not the character with ASCII value 12.

@@ -1,8 +1,23 @@
+                              		A-RANGE
+
 PROBLEM STATEMENT : 
-Accept two single digit numbers digits a and b and output number of single digit numbers between a and b.
+Amex have used an algorithm to find their loyal customers among the given set of customers (numbered from 0 to n, where n is a whole number)
+and have found them to be present in certain ranges.
 
-CONSTRAINTS : 0 <= a <= b <= 9
+For example if a valid range is - a to b, then it means that all customers indexed a+1,....,b-1 are their loyal customers. 
+Amex have decided to present gifts to their loyal customers in this holiday season, 
+hence wishes to find out the number of gifts that needs to be delivered, given a and b.
 
+*********************************************************************************
+CONSTRAINTS : 0 <= a <= b <= 9 (They are single digit whole numbers)
+
+INPUT :
+ab
+
+OUTPUT :
+The number of gifts
+
+*********************************************************************************
 SAMPLE TEST CASE :
 
 INPUT:
@@ -14,8 +29,11 @@ OUTPUT:
 EXPLANATION :
 a = 2 and b = 4. Now there is just one number 3 between 2 and 4, hence output is 1.
 
+*********************************************************************************
 TIME ALLOWED : 5sec
+
+MEMORY LIMIT : Maximum 10^5 commands are only allowed.
 
 NOTE : 
 Print the string representing the answer not the character with answer as it's ASCII value.
-So, if the answer is 1 print '1' and not the character with ASCII value 1.
+So, if the answer is 1 print "1" (without the quotes) and not the character with ASCII value 1.

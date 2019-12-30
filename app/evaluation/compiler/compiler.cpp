@@ -4,7 +4,7 @@
 #include<utility>
 #include<fstream>
 
-#define MAX_SIZE 1e8
+#define MAX_SIZE 1e6
 #define MAX_CELLS 65536
 #define MAX_VAL 255
 #define MIN_VAL 0
@@ -106,10 +106,10 @@ int main(int argc,char **argv){
 	}
 
 	string program = "";
-	char *tmp;
-	int noi = 0;
-	while(fsource.getline(tmp,MAX_SIZE)){
-		noi += strlen(tmp);
+	string tmp;
+	long long noi = 0;
+	while(getline(fsource,tmp)){
+		noi += tmp.length();
 		program += tmp;
 		program += "\n";
 	}

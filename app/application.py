@@ -28,7 +28,7 @@ app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=2)
 ENV = 'dev'
 if ENV == 'dev' :
 	app.debug = True
-	app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/e_contest'
 else :
 	app.debug = False
 	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ofkyawpdjvlppl:e98959750f19e6517d4e8eabf5710d40bb4f7d5c1cb7b3ad0e645efee910acf3@ec2-174-129-234-111.compute-1.amazonaws.com:5432/dduv1ph7hquc21'
@@ -52,7 +52,7 @@ class SignupForm(FlaskForm) :
 	shaastraID = StringField('shaastraID',validators = [InputRequired(), Length(max = 25,message='Shaastra ID must be atmost 25 characters')])
 	contact = StringField('contact',validators = [Length(max = 20,message='Contact Number must be atmost 20 characters')])
 
-register_url = '/shaastrareg:havocrulez'
+register_url = '/register'
 
 pno = 0
 
@@ -148,6 +148,10 @@ def dashboard() :
 			global pno
 			qn_no = str(re.sub('[^0-9]+',"",str(qn)))
 			res = score(code,qn_no,str(pno))
+			if (qn_no == '6') :
+				qn_no = '3'
+			elif (qn_no == '7') :
+				qn_no = '4'
 			currRes = Result.query.filter_by(userid = session['userid']).first()
 			if (res == 'CORRECT ANSWER') :
 				if (qn == 'QN1') :
@@ -162,13 +166,13 @@ def dashboard() :
 					elif currRes.q2s == None or currRes.q2s < 100 :
 						currRes.q2s = 100
 						currRes.q2t = init_time
-				elif (qn == 'QN3') :
+				elif (qn == 'QN3' or qn == 'QN6') :
 					if currRes.q3s == 100 :
 						currRes.q3t = min([currRes.q3t,init_time])
 					elif currRes.q3s == None or currRes.q3s < 100 :
 						currRes.q3s = 100
 						currRes.q3t = init_time
-				elif (qn == 'QN4') :
+				elif (qn == 'QN4' or qn == 'QN7') :
 					if currRes.q4s == 100 :
 						currRes.q4t = min([currRes.q4t,init_time])
 					elif currRes.q4s == None or currRes.q4s < 100 :
@@ -187,9 +191,9 @@ def dashboard() :
 					currRes.q1s = currRes.q1s if currRes.q1s is not None else 0
 				elif (qn == 'QN2') :
 					currRes.q2s = currRes.q2s if currRes.q2s is not None else 0
-				elif (qn == 'QN3') :
+				elif (qn == 'QN3' or qn == 'QN6') :
 					currRes.q3s = currRes.q3s if currRes.q3s is not None else 0
-				elif (qn == 'QN4') :
+				elif (qn == 'QN4' or qn == 'QN7') :
 					currRes.q4s = currRes.q4s if currRes.q4s is not None else 0
 				elif (qn == 'QN5') :
 					currRes.q5s = currRes.q5s if currRes.q5s is not None else 0

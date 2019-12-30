@@ -2,9 +2,9 @@ import filecmp
 import os
 import re
 import multiprocessing
-from compiler import interpret
+from  compiler import interpret
 
-noTC = {'1': 1,'2': 19,'3': 19,'4': 19,'5': 16}
+noTC = {'1': 1,'2': 19,'3': 19,'4': 19,'5': 16,'6': 19,'7': 19}
 
 def score(code,qn_no,pno) :
 	count = 0

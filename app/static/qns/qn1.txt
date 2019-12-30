@@ -1,12 +1,27 @@
+				4-DIGIT PINS ARE ODD, RIGHT?
+	
 PROBLEM STATEMENT :
-Let S be a string of length 4 consisting of digits ‘0’ to ‘9’. How many strings are there such that the string contains only odd number zeroes? Print the final answer alone.
+American Express are deciding if they could allow 4 digit CVV pins instead of the existing
+3 digit ones. 
+They want to find out what is the total number of unique 4 digit PINs that are possible such that 
+the PIN contains only odd number of zeroes? 
+Do the calculations in your head and just print the final answer using the given esoteric language.
 
-Note that it is a 4-digit string and not a 4-digit number.
+Note that it is a 4-digit PIN (where each digit has to be 0 - 9), and not a 4-digit number.
+So 0300 is a valid PIN, 3000 is a valid PIN, 12A4 is not.
 
-CONSTRAINTS : 0 <= a <= b <= 9
+*********************************************************************************
+INPUT :
+(NO INPUT)
 
+OUTPUT :
+Number of Valid 4-digit PINS in a single line
+
+*********************************************************************************
 TIME ALLOWED : 5sec
 
+MEMORY LIMIT : Maximum 10^5 commands are only allowed.
+
 NOTE : 
-Print the string representing the answer not the character with answer as it's ASCII value.
-So, if the answer is 12345 the output should be "12345".
+Print the string representing the answer not the character with the answer as it's ASCII value.
+So, if the answer is 12345 the output should be "12345" without any spaces in between (and without the quotes obviously)
