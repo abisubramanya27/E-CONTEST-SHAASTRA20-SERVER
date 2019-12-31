@@ -17,7 +17,7 @@ OUTPUT :
 The total number of supplementary cards obtained for free
 
 *********************************************************************************
-SAMPLE TEST CASE :
+SAMPLE TEST CASE 1 :
 
 INPUT:
 26
@@ -27,6 +27,19 @@ OUTPUT:
 
 EXPLANATION :
 a = 2 and b = 6. 2 * 6 = 12. Hence output is 12.
+
+
+SAMPLE TEST CASE 2 :
+
+INPUT:
+24
+
+OUTPUT:
+8
+
+EXPLANATION :
+a = 2 and b = 4. 2 * 4 = 8. 
+Hence output is 8. (Mind it, not 08 or <space>8 or 8<space>)
 
 *********************************************************************************
 TIME ALLOWED : 5sec

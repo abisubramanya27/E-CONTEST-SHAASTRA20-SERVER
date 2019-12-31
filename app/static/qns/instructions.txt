@@ -45,12 +45,28 @@ Just like the values in the cell, the data pointer also wraps around in case of 
 So if you move the data pointer to the right from 65,535th cell it goes to 0th cell,
 And if you move left from the 0th cell, it goes to the 65,535th cell.
 
+*********************************************************************
+GENERAL INSTRUCTIONS
+*********************************************************************
+
 **** Beware of "RunTime Errors" that can arise in case you try to input a character when there is none ****
 
 **** Unless you explicitly print a whitespace the character you output will be adjacent to the previous one without any space in between **** 
 
 **** That also means you shouldn't print any white spaces during output unless explicitly asked to ****
 
+**** We allow you to use an online IDE (the link is provided) for your quick checking and debugging of your program before submitting ****
+
+**** Incase a program runs for more than 3 secs on the online IDE, press "STOP" (as it is surely due to an infinite loop only, no brainf*ck program we write now takes that much time) ****
+
+**** You are not allowed to open any other website or webpage during the contest, the violation of which leads to disqualification ****
+
+**** Don't press the refresh or back button during the contest; It may lead to unnecessary problems which only affects your score ****
+
+**** Change between questions and solve them in any order as you wish.
+Though it is arranged in increasing order of difficulty, it was difficult for us to decide the ordering itself! ****
+
+**** Hope you have fun solving the questions!! Why so Serious?!! ****
 
 *********************************************************************
 EXAMPLES :

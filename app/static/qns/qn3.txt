@@ -17,7 +17,7 @@ OUTPUT :
 Total number of Amex Cards in a single line
 
 *********************************************************************************
-SAMPLE TEST CASE :
+SAMPLE TEST CASE 1 :
 
 INPUT:
 84
@@ -27,6 +27,19 @@ OUTPUT:
 
 EXPLANATION :
 a = 8 and b = 4. 8 + 4 = 12. Hence output is 12.
+
+
+SAMPLE TEST CASE 2 :
+
+INPUT:
+24
+
+OUTPUT:
+6
+
+EXPLANATION :
+a = 2 and b = 4. 2 + 4 = 6. 
+Hence output is 6. (Mind it, not 06 or <space>6 or 6<space>)
 
 *********************************************************************************
 TIME ALLOWED : 5sec

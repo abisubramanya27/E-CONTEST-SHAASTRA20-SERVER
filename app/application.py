@@ -4,14 +4,14 @@ from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length, EqualTo
 from flask_session import Session
 import os
-from app.class_orm import db,User,Result,Submission
+from class_orm import db,User,Result,Submission
 import time
 from datetime import datetime, timedelta
 from werkzeug import generate_password_hash,check_password_hash
 import threading
 import re
 import sys
-from app.qnEvaluate import score
+from qnEvaluate import score
 from flask_socketio import SocketIO, emit
 import decimal 
 from sqlalchemy import nullslast
@@ -25,7 +25,7 @@ app.secret_key = 'Thisisnottobesharedtoanyone'
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=6)
 
-ENV = 'PROD'
+ENV = 'dev'
 if ENV == 'dev' :
 	app.debug = True
 	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/e_contest'
@@ -211,7 +211,7 @@ def dashboard() :
 			db.session.commit()
 
 
-		threading.Thread(target = evaluate,args = (CODE,qn,5400-initTime)).start()
+		threading.Thread(target = evaluate,args = (CODE,qn,6000-initTime)).start()
 		flash('Solution Submitted Successfully')
 		return redirect('/dashboard')
 
@@ -236,7 +236,7 @@ def register() :
 
 		if (request.method == 'POST' and form.validate_on_submit()) :
 			if User.query.filter_by(username = form.username.data).count() == 0 :
-				new_user = User(done = False,rem_time = 5400,username = form.username.data,password = generate_password_hash(form.confirm_password.data),email = form.email.data,shaastraID = form.shaastraID.data,name = form.name.data,contact = form.contact.data)
+				new_user = User(done = False,rem_time = 6000,username = form.username.data,password = generate_password_hash(form.confirm_password.data),email = form.email.data,shaastraID = form.shaastraID.data,name = form.name.data,contact = form.contact.data)
 				db.session.add(new_user)
 				db.session.commit() 
 			return '<h1>' + 'Successfully Registered Contestant' + '</h1>'

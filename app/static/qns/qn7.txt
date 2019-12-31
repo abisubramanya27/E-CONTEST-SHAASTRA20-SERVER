@@ -18,7 +18,7 @@ abc
 OUTPUT :
 The total number of supplementary cards obtained for free
 *********************************************************************************
-SAMPLE TEST CASE :
+SAMPLE TEST CASE 1 :
 
 INPUT:
 666
@@ -29,6 +29,19 @@ OUTPUT:
 EXPLANATION :
 a = 6, b = 6, c = 6.
 6 * 6 = 36 (Don't ask me which ones to multiply!)
+
+
+SAMPLE TEST CASE 2 :
+
+INPUT:
+222
+
+OUTPUT:
+4
+
+EXPLANATION :
+a = 2 , b = 2, c = 2. 
+2 * 2 = 4. Hence output is 4. (Mind it, not 04 or <space>4 or 4<space>)
 
 *********************************************************************************
 TIME ALLOWED : 5sec
