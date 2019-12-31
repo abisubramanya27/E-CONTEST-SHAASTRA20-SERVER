@@ -17,7 +17,9 @@ window.onload = () => {
 				rt = rt - 1;
 				localStorage.remtime = String(rt);
 				time.value = rt;
-				time2.value = rt;
+				if(time2 != null) {
+					time2.value = rt;
+				}
 				disp.innerHTML = timeformat(rt);
 			}
 			else if (rt <= 0) {
