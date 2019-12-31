@@ -66,6 +66,7 @@ Contest Home Page
 		<h3>CODE EDITOR</h3>
 		<form name = "code-edit" id = "code-edit" method = "POST" action = "{{url_for('dashboard')}}">
 			<textarea name = "code" id = "code-inp" placeholder = "Your code goes here...." required></textarea>
+			<input type = "hidden" name = "remtime" id = "remtime" value = "{{rem_time}}">
 			<input name = "submit" type = "submit" value = "Submit Code" id = "code-sub">
 		</form>
 	</div>

@@ -4,14 +4,14 @@ from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length, EqualTo
 from flask_session import Session
 import os
-from app.class_orm import db,User,Result,Submission
+from class_orm import db,User,Result,Submission
 import time
 from datetime import datetime, timedelta
 from werkzeug import generate_password_hash,check_password_hash
 import threading
 import re
 import sys
-from app.qnEvaluate import score
+from qnEvaluate import score
 from flask_socketio import SocketIO, emit
 import decimal 
 from sqlalchemy import nullslast
@@ -23,7 +23,7 @@ app.config['SECRET_KEY'] = "HAVOCRULEZ"
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.secret_key = 'Thisisnottobesharedtoanyone'
 app.config['SESSION_TYPE'] = 'filesystem'
-app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=2)
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=6)
 
 ENV = 'PROD'
 if ENV == 'dev' :
@@ -101,7 +101,7 @@ def login() :
 			elif user is not None and check_password_hash(user.password,form.password.data) :
 				session.modified = True
 				session.permanent = True
-				app.permanent_session_lifetime = timedelta(hours = 2)
+				app.permanent_session_lifetime = timedelta(hours = 6)
 				session['username'] = user.username
 				session['userid'] = user.id
 				session['time'] = time.time()
@@ -142,6 +142,7 @@ def dashboard() :
 			db.session.commit()
 		CODE = request.form.get('code')
 		qn = str(request.form.get('question-select'))
+		initTime = float(request.form.get('remtime'))
 
 		@copy_current_request_context
 		def evaluate(code,qn,init_time) :
@@ -210,7 +211,7 @@ def dashboard() :
 			db.session.commit()
 
 
-		threading.Thread(target = evaluate,args = (CODE,qn,time.time()-session['time'])).start()
+		threading.Thread(target = evaluate,args = (CODE,qn,initTime)).start()
 		flash('Solution Submitted Successfully')
 		return redirect('/dashboard')
 

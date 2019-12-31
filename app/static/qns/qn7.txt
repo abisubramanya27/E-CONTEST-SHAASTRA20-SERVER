@@ -21,13 +21,14 @@ The total number of supplementary cards obtained for free
 SAMPLE TEST CASE :
 
 INPUT:
-26
+666
 
 OUTPUT:
-12
+36
 
 EXPLANATION :
-a = 2 and b = 6. The product of 2 and 6 is 12. Hence output is 12.
+a = 6, b = 6, c = 6.
+6 * 6 = 36 (Don't ask me which ones to multiply!)
 
 *********************************************************************************
 TIME ALLOWED : 5sec
@@ -36,4 +37,4 @@ MEMORY LIMIT : Maximum 10^5 commands are only allowed.
 
 NOTE : 
 Print the string representing the answer not the character with answer as it's ASCII value.
-So, if the answer is 12 print '12' (without the quotes) and not the character with ASCII value 12.
+So, if the answer is 36 print '36' (without the quotes and without spaces) and not the character with ASCII value 36.

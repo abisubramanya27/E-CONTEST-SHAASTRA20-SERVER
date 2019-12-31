@@ -4,6 +4,7 @@ window.onload = () => {
 	showSnackbar();
 	var disp = document.querySelector('#timer');
 	var time = document.querySelector('#remTime');
+	var time2 = document.querySelector('#remtime');
 	if(typeof(Storage) !== "undefined") {
 		if(!localStorage.getItem("remtime")) {
 			localStorage.setItem("remtime",time.value);
@@ -16,6 +17,7 @@ window.onload = () => {
 				rt = rt - 1;
 				localStorage.remtime = String(rt);
 				time.value = rt;
+				time2.value = rt;
 				disp.innerHTML = timeformat(rt);
 			}
 			else if (rt <= 0) {

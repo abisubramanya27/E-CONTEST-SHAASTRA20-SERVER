@@ -48,4 +48,4 @@ NOTE :
 Print the character which will have (48 + answer) as its ASCII value.
 So, if the answer is 3 output will be '3' (48 + 3 = 51, and this corresponds to the character '3').
 Similarly if the answer is 10, the output will be ':' (colon) because 48 + 10 = 58 and the character with ASCII value 58 is Colon (:).
-Don't print the quotes.
+Don't print the quotes and don't print any whitespaces.

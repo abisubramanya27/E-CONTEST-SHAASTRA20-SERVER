@@ -49,6 +49,8 @@ And if you move left from the 0th cell, it goes to the 65,535th cell.
 
 **** Unless you explicitly print a whitespace the character you output will be adjacent to the previous one without any space in between **** 
 
+**** That also means you shouldn't print any white spaces during output unless explicitly asked to ****
+
 
 *********************************************************************
 EXAMPLES :

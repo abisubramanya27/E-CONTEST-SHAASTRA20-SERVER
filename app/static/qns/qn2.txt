@@ -36,4 +36,4 @@ MEMORY LIMIT : Maximum 10^5 commands are only allowed.
 
 NOTE : 
 Print the string representing the answer not the character with answer as it's ASCII value.
-So, if the answer is 1 print "1" (without the quotes) and not the character with ASCII value 1.
+So, if the answer is 1 print "1" (without the quotes and without any spaces) and not the character with ASCII value 1.

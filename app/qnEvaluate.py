@@ -2,17 +2,17 @@ import filecmp
 import os
 import re
 import multiprocessing
-from  app.compiler import interpret
+from  compiler import interpret
 
 noTC = {'1': 1,'2': 19,'3': 19,'4': 19,'5': 16,'6': 19,'7': 19}
 
 def score(code,qn_no,pno) :
 	count = 0
-	inputPath = './app/evaluation/input/qn'+qn_no
+	inputPath = './evaluation/input/qn'+qn_no
 	for filename in os.listdir(inputPath) :
 		if 'tc' in filename :
 			fno = re.sub('[^0-9]+','',filename)
-			outputfilePath = './app/evaluation/output' + pno + '.txt'
+			outputfilePath = './evaluation/output' + pno + '.txt'
 			with open(outputfilePath,'w+') as mfile :
 				count += 1
 				inpfilePath = inputPath + '/' + filename
@@ -32,8 +32,8 @@ def score(code,qn_no,pno) :
 				else :
 					Message = Q.get()
 					if Message == 'ANSWER WRITTEN' :
-						with open('./app/evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') as tgtfile :
-							if filecmp.cmp(outputfilePath,'./app/evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') :
+						with open('./evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') as tgtfile :
+							if filecmp.cmp(outputfilePath,'./evaluation/expected_output/qn'+qn_no+'/output-'+str(fno)+'.txt') :
 								pass
 							else :
 								tgtfile.close()
