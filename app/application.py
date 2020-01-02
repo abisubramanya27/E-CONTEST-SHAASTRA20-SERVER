@@ -4,14 +4,14 @@ from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length, EqualTo
 from flask_session import Session
 import os
-from app.class_orm import db,User,Result,Submission
+from class_orm import db,User,Result,Submission
 import time
 from datetime import datetime, timedelta
 from werkzeug import generate_password_hash,check_password_hash
 import threading
 import re
 import sys
-from app.qnEvaluate import score
+from qnEvaluate import score
 from flask_socketio import SocketIO, emit
 import decimal 
 from sqlalchemy import nullslast
@@ -25,7 +25,7 @@ app.secret_key = 'Thisisnottobesharedtoanyone'
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=6)
 
-ENV = 'PROD'
+ENV = 'dev'
 if ENV == 'dev' :
 	app.debug = True
 	app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/e_contest'
@@ -96,17 +96,20 @@ def login() :
 		error = None
 		if (request.method == 'POST' and form.validate_on_submit()) :
 			user = User.query.filter_by(username = form.username.data).first()
-			if user is not None and user.done == True :
-				error = "Already Completed the Contest"
-			elif user is not None and check_password_hash(user.password,form.password.data) :
-				session.modified = True
-				session.permanent = True
-				app.permanent_session_lifetime = timedelta(hours = 6)
-				session['username'] = user.username
-				session['userid'] = user.id
-				session['time'] = time.time()
-				user.done = True;
-				return redirect('/dashboard')
+			if user is None :
+				error = 'Username or Password Incorrect'
+			elif check_password_hash(user.password,form.password.data) :
+				if user.done == True :
+					error = "Already Completed the Contest"
+				else :
+					session.modified = True
+					session.permanent = True
+					app.permanent_session_lifetime = timedelta(hours = 6)
+					session['username'] = user.username
+					session['userid'] = user.id
+					session['time'] = time.time()
+					user.done = True;
+					return redirect('/dashboard')
 			else :
 				error = 'Username or Password Incorrect'
 
@@ -232,6 +235,8 @@ def register() :
 	try :
 		session['userid'] 
 	except KeyError :
+		error = None
+		
 		form = SignupForm(request.form)
 
 		if (request.method == 'POST' and form.validate_on_submit()) :
@@ -239,9 +244,10 @@ def register() :
 				new_user = User(done = False,rem_time = 6000,username = form.username.data,password = generate_password_hash(form.confirm_password.data),email = form.email.data,shaastraID = form.shaastraID.data,name = form.name.data,contact = form.contact.data)
 				db.session.add(new_user)
 				db.session.commit() 
-			return '<h1>' + 'Successfully Registered Contestant' + '</h1>'
+				return '<h1>' + 'Successfully Registered Contestant' + '</h1>'
+			else :
+				error = "Username already Registered"
 
-		error = None
 		if bool(form.errors) :
 			error = form.errors[list(form.errors.keys())[0]][0]
 			print(form.errors)
