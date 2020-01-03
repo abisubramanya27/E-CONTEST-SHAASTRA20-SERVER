@@ -210,6 +210,7 @@ def dashboard() :
 			pno += 1
 			currRes.tot_score = sum([e for e in scorel if e is not None])
 			currRes.tot_time = sum([decimal.Decimal(e) for e in timel if e is not None])
+			currRes.user.rem_time = 6000-init_time
 
 			db.session.commit()
 

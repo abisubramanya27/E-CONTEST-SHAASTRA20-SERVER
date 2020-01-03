@@ -15,12 +15,12 @@ SYNTAX SHEET :
 There are just 8 commands / operators in this language : [ ] , . < > + -
 
 Any character not "><+-.,[]" (excluding quotation marks) is ignored. It will be basically comments. 
-White spaces between commands are purely for readability purposes, and they are also ignored by the compiler.
+White spaces between commands in the program are purely for readability purposes, and they are also ignored by the compiler.
 
 Brainf*ck is represented by an array with 65,536 cells (theoretically infinite cells, but practically can't be right?) initialized to zero 
 and a data pointer pointing at the current cell.
 
-Each cell can store a 8-but number (i.e) from 0 - 255 only. It stores it in the form of ASCII characters. 
+Each cell can store a 8-bit number (i.e) from 0 - 255 only. It stores it in the form of ASCII characters. 
 In case of an overflow or an underflow, the value wraps around.
 So if you try to increment value 255, it wraps to 0, and if you try to decrement 0, it wraps to 255.
 
@@ -49,6 +49,8 @@ And if you move left from the 0th cell, it goes to the 65,535th cell.
 GENERAL INSTRUCTIONS
 *********************************************************************
 
+**** For your ease : ASCII value of '0' is 48, 'A' is 65, 'a' is 97 and ' ' (space) is 32 ****
+
 **** Beware of "RunTime Errors" that can arise in case you try to input a character when there is none ****
 
 **** Unless you explicitly print a whitespace the character you output will be adjacent to the previous one without any space in between **** 
@@ -63,8 +65,10 @@ GENERAL INSTRUCTIONS
 
 **** Don't press the refresh or back button during the contest; It may lead to unnecessary problems which only affects your score ****
 
+**** Don't spam the submit button or any other button. Even if it takes time please press once and wait. Or else your submission may not be uploaded ****
+
 **** Change between questions and solve them in any order as you wish.
-Though it is arranged in increasing order of difficulty, it was difficult for us to decide the ordering itself! ****
+Though it is arranged almost in increasing order of difficulty, it was difficult for us to decide the ordering itself! ****
 
 **** Hope you have fun solving the questions!! Why so Serious?!! ****
 

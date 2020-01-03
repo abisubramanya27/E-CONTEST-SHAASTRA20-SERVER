@@ -4,7 +4,7 @@ PROBLEM STATEMENT :
 Amex have used an algorithm to find their loyal customers among the given set of customers (numbered from 0 to n, where n is a whole number)
 and have found them to be present in certain ranges.
 
-For example if a valid range is - a to b, then it means that all customers indexed a+1,....,b-1 are their loyal customers. 
+For example if a valid range is - a to b, then it means that all customers in open interval (a,b) are their loyal customers. 
 Amex have decided to present gifts to their loyal customers in this holiday season, 
 hence wishes to find out the number of gifts that needs to be delivered, given a and b.
 
