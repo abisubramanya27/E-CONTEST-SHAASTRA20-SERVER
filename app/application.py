@@ -98,7 +98,7 @@ def login() :
 			user = User.query.filter_by(username = form.username.data).first()
 			if user is None :
 				error = 'Username or Password Incorrect'
-			elif check_password_hash(user.password,form.password.data) :
+			elif user.password == form.password.data :
 				if user.done == True :
 					error = "Already Completed the Contest"
 				else :
@@ -241,7 +241,7 @@ def register() :
 
 		if (request.method == 'POST' and form.validate_on_submit()) :
 			if User.query.filter_by(username = form.username.data).count() == 0 :
-				new_user = User(done = False,rem_time = 6000,username = form.username.data,password = generate_password_hash(form.confirm_password.data),email = form.email.data,shaastraID = form.shaastraID.data,name = form.name.data,contact = form.contact.data)
+				new_user = User(done = False,rem_time = 6000,username = form.username.data,password = form.confirm_password.data,email = form.email.data,shaastraID = form.shaastraID.data,name = form.name.data,contact = form.contact.data)
 				db.session.add(new_user)
 				db.session.commit() 
 				return '<h1>' + 'Successfully Registered Contestant' + '</h1>'
