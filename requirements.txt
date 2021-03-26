@@ -38,7 +38,7 @@ python-engineio==3.11.1
 python-socketio==4.4.0
 pytz==2019.1
 PyWavelets==1.0.3
-PyYAML==5.1.2
+PyYAML==5.4
 rsa==3.4.2
 six==1.12.0
 sklearn==0.0
